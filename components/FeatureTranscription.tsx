@@ -69,7 +69,7 @@ export default function FeatureTranscription() {
     };
 
     return (
-        <section className="bg-white py-24 overflow-hidden">
+        <section className="py-24 overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 

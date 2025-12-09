@@ -39,7 +39,7 @@ export function ClassPartnerFAQ() {
     ];
 
     return (
-        <section className="py-24 px-4 bg-white text-gray-900 border-t border-gray-100">
+        <section className="py-24 px-4 text-gray-900 border-t border-gray-100/50 relative">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className={`text-4xl md:text-5xl font-medium tracking-tight mb-6 ${ebGaramond.className}`}>
@@ -50,7 +50,15 @@ export function ClassPartnerFAQ() {
                     </p>
                 </div>
 
-                <div className="bg-gray-50 rounded-2xl border border-gray-100 p-6 md:p-8">
+                <div
+                    className="rounded-2xl p-6 md:p-8"
+                    style={{
+                        background: "linear-gradient(145deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%)",
+                        backdropFilter: "blur(12px)",
+                        boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.05)",
+                        border: "1px solid rgba(255,255,255,0.5)"
+                    }}
+                >
                     <Accordion type="single" collapsible className="w-full">
                         {faqItems.map((item) => (
                             <AccordionItem key={item.id} value={item.id} className="border-b border-gray-200 last:border-0 px-2">

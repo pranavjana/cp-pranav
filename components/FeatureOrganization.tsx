@@ -8,13 +8,21 @@ const ebGaramond = EB_Garamond({
 
 export function FeatureOrganization() {
     return (
-        <section className="py-24 px-4 bg-white text-gray-900 border-t border-gray-100">
+        <section className="py-24 px-4 text-gray-900 border-t border-gray-100/50 relative">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
 
                 {/* Left Side: Mockup UI */}
                 <div className="w-full md:w-1/2 flex justify-center">
                     {/* Dashboard Class List Mockup */}
-                    <div className="relative w-full max-w-md bg-white border border-gray-100 rounded-2xl shadow-xl overflow-hidden aspect-[4/5] flex flex-col p-6">
+                    <div
+                        className="relative w-full max-w-md rounded-2xl shadow-xl overflow-hidden aspect-[4/5] flex flex-col p-6"
+                        style={{
+                            background: "linear-gradient(145deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%)",
+                            backdropFilter: "blur(12px)",
+                            boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.05)",
+                            border: "1px solid rgba(255,255,255,0.5)"
+                        }}
+                    >
 
                         {/* Header */}
                         <div className="flex justify-between items-center mb-6">

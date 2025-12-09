@@ -8,7 +8,7 @@ const ebGaramond = EB_Garamond({
 
 export function AIFeatures() {
     return (
-        <section className="py-24 px-4 bg-white text-gray-900">
+        <section className="py-24 px-4 text-gray-900 relative">
             <div className="max-w-7xl mx-auto">
 
                 {/* Section Header */}
@@ -26,7 +26,15 @@ export function AIFeatures() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
                     {/* Feature 1: Local Vector Storage */}
-                    <div className="bg-gray-50 rounded-3xl p-8 lg:p-10 flex flex-col h-full border border-gray-100">
+                    <div
+                        className="rounded-3xl p-8 lg:p-10 flex flex-col h-full"
+                        style={{
+                            background: "linear-gradient(145deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%)",
+                            backdropFilter: "blur(12px)",
+                            boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.05)",
+                            border: "1px solid rgba(255,255,255,0.5)"
+                        }}
+                    >
                         <div className="flex items-center gap-3 mb-4">
                             <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,7 +103,15 @@ export function AIFeatures() {
                     </div>
 
                     {/* Feature 2: Custom Model Context */}
-                    <div className="bg-gray-50 rounded-3xl p-8 lg:p-10 flex flex-col h-full border border-gray-100">
+                    <div
+                        className="rounded-3xl p-8 lg:p-10 flex flex-col h-full"
+                        style={{
+                            background: "linear-gradient(145deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%)",
+                            backdropFilter: "blur(12px)",
+                            boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.05)",
+                            border: "1px solid rgba(255,255,255,0.5)"
+                        }}
+                    >
                         <div className="flex items-center gap-3 mb-4">
                             <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

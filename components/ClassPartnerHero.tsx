@@ -12,7 +12,7 @@ const ebGaramond = EB_Garamond({
 
 export function ClassPartnerHero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-white text-gray-900 flex flex-col items-center pt-40 px-4">
+    <section className="relative min-h-screen w-full overflow-hidden text-gray-900 flex flex-col items-center pt-40 px-4">
       {/* Aurora Background */}
       <div className="absolute inset-0 z-0">
         <Aurora
