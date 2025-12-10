@@ -1,12 +1,19 @@
 "use client";
 
 import React from "react";
-import { EB_Garamond } from "next/font/google";
+import localFont from "next/font/local";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { motion } from "framer-motion";
 
-const ebGaramond = EB_Garamond({
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
+const workSans = localFont({
+    src: [
+        { path: "../public/fonts/WorkSans-ExtraLight.woff2", weight: "200", style: "normal" },
+        { path: "../public/fonts/WorkSans-Light.woff2", weight: "300", style: "normal" },
+        { path: "../public/fonts/WorkSans-Regular.woff2", weight: "400", style: "normal" },
+        { path: "../public/fonts/WorkSans-Medium.woff2", weight: "500", style: "normal" },
+        { path: "../public/fonts/WorkSans-SemiBold.woff2", weight: "600", style: "normal" },
+        { path: "../public/fonts/WorkSans-Bold.woff2", weight: "700", style: "normal" },
+    ],
 });
 
 export function ClassPartnerFAQ() {
@@ -41,16 +48,22 @@ export function ClassPartnerFAQ() {
     return (
         <section className="py-24 px-4 text-gray-900 border-t border-gray-100/50 relative">
             <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-16">
-                    <h2 className={`text-4xl md:text-5xl font-medium tracking-tight mb-6 ${ebGaramond.className}`}>
+                <motion.div
+                    className="text-center mb-16"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <h2 className={`text-4xl md:text-5xl font-light tracking-tight mb-6 ${workSans.className}`}>
                         Frequently Asked Questions
                     </h2>
                     <p className="text-lg text-gray-600">
                         Everything you need to know about ClassPartner.
                     </p>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
                     className="rounded-2xl p-6 md:p-8"
                     style={{
                         background: "linear-gradient(145deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%)",
@@ -58,6 +71,10 @@ export function ClassPartnerFAQ() {
                         boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.05)",
                         border: "1px solid rgba(255,255,255,0.5)"
                     }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <Accordion type="single" collapsible className="w-full">
                         {faqItems.map((item) => (
@@ -71,7 +88,7 @@ export function ClassPartnerFAQ() {
                             </AccordionItem>
                         ))}
                     </Accordion>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
