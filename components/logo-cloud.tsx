@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 
@@ -15,26 +16,33 @@ export default function LogoCloud() {
                             speed={40}
                             gap={150}>
                             <div className="flex items-center">
-                                <img
+                                <Image
                                     className="mx-auto h-28 sm:h-28 md:h-24 w-auto dark:invert object-contain"
                                     src="/nus.png"
                                     alt="NUS Logo"
+                                    width={200}
+                                    height={120}
+                                    priority
                                 />
                             </div>
 
                             <div className="flex items-center">
-                                <img
+                                <Image
                                     className="mx-auto h-8 sm:h-10 md:h-12 w-auto dark:invert object-contain"
                                     src="/ntu.png"
                                     alt="NTU Logo"
+                                    width={160}
+                                    height={60}
                                 />
                             </div>
 
                             <div className="flex items-center">
-                                <img
+                                <Image
                                     className="mx-auto h-8 sm:h-10 md:h-12 w-auto dark:invert object-contain"
                                     src="/smu.png"
                                     alt="SMU Logo"
+                                    width={160}
+                                    height={60}
                                 />
                             </div>
                         </InfiniteSlider>

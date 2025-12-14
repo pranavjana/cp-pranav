@@ -18,32 +18,34 @@ const workSans = localFont({
     ],
 });
 
+const fullText = "So today we're discussing the cognitive revolution. It wasn't just about bigger brains, but about how we started sharing complex myths and stories. This ability to gossip—effectively—allowed us to cooperate in large numbers. Unlike other species, we could build trust with strangers just by believing in the same fictional entities, like money or nations.";
+const words = fullText.split(" ");
+const insights: {
+    title: string;
+    text: string;
+    wordRange: { start: number; end: number };
+}[] = [
+    {
+        title: "Key Concept",
+        text: "Cognitive Revolution enabled large-scale human cooperation.",
+        wordRange: { start: 4, end: 9 } // "the cognitive revolution"
+    },
+    {
+        title: "Mechanism",
+        text: "Language evolved for gossip, enabling social trust.",
+        wordRange: { start: 22, end: 32 } // "gossip—effectively—allowed us to cooperate in large numbers"
+    },
+    {
+        title: "Important Detail",
+        text: "Shared myths and fictional entities (money, nations) build trust.",
+        wordRange: { start: 46, end: 58 } // "fictional entities, like money or nations"
+    }
+];
+
 export default function FeatureTranscription() {
     const [visibleWords, setVisibleWords] = useState<string[]>([]);
     const [activeInsight, setActiveInsight] = useState<number | null>(null);
     const [highlightedRanges, setHighlightedRanges] = useState<{ start: number, end: number }[]>([]);
-
-    const fullText = "So today we're discussing the cognitive revolution. It wasn't just about bigger brains, but about how we started sharing complex myths and stories. This ability to gossip—effectively—allowed us to cooperate in large numbers. Unlike other species, we could build trust with strangers just by believing in the same fictional entities, like money or nations.";
-    const words = fullText.split(" ");
-
-    // Define insights with their corresponding word ranges in the transcript
-    const insights = [
-        {
-            title: "Key Concept",
-            text: "Cognitive Revolution enabled large-scale human cooperation.",
-            wordRange: { start: 4, end: 9 } // "the cognitive revolution"
-        },
-        {
-            title: "Mechanism",
-            text: "Language evolved for gossip, enabling social trust.",
-            wordRange: { start: 22, end: 32 } // "gossip—effectively—allowed us to cooperate in large numbers"
-        },
-        {
-            title: "Important Detail",
-            text: "Shared myths and fictional entities (money, nations) build trust.",
-            wordRange: { start: 46, end: 58 } // "fictional entities, like money or nations"
-        }
-    ];
 
     useEffect(() => {
         let index = 0;
