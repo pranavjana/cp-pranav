@@ -18,10 +18,11 @@ function isValidEmail(email: string): boolean {
 // Initialize Google Sheets API
 async function getGoogleSheetsClient() {
   try {
-    // Parse credentials from environment variable
-    const credentials = process.env.GOOGLE_SERVICE_ACCOUNT_KEY
-      ? JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY)
-      : undefined;
+    const credentials = {
+      type: 'service_account' as const,
+      client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+      private_key: process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+    };
 
     const auth = new google.auth.GoogleAuth({
       credentials,
