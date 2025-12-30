@@ -23,8 +23,7 @@ async function getGoogleSheetsClient() {
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
-    const authClient = await auth.getClient();
-    const sheets = google.sheets({ version: 'v4', auth: authClient });
+    const sheets = google.sheets({ version: 'v4', auth });
 
     return sheets;
   } catch (error) {
